@@ -22,7 +22,7 @@ jobs:
         docker pull zaproxy/zap-stable
   
         # Run ZAP Baseline scan and mount the output directory
-        docker run --rm -v $(pwd):/zap/wrk --network=host \
+        docker run -v $(pwd):/zap/wrk --network=host \
           -t zaproxy/zap-stable zap-baseline.py \
           -t http://34.239.245.207:5050 \
           -J report_json.json \
