@@ -16,7 +16,7 @@ jobs:
 
     # Run ZAP Baseline Scan
     - name: Run ZAP Baseline Scan
-      uses: zaki-zak/owasp-zap-action@v0.5.0
+      uses: zaproxy/action-baseline@v0.14.0
       with:
         target: 'http://34.239.245.207:5050'  # Replace with the public IP and port of your EC2 instance
         fail-on-high-risks: 'false'  # Set to 'true' if you want to fail the job on high-risk vulnerabilities
