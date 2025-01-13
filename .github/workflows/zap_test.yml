@@ -25,6 +25,9 @@ jobs:
       env:
         ZAP_HOST: 'localhost'
         ZAP_PORT: '8090'  # Port where ZAP is running (default is 8090)
+    - name: List files in current directory
+      run: |
+        ls -la $(pwd)  # List all files in the current directory
      # Upload the generated ZAP report as an artifact
     - name: Upload ZAP report
       uses: actions/upload-artifact@v4
