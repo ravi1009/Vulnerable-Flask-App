@@ -14,13 +14,18 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Create /zap/wrk directory in the container
+      run: |
+        # Pull the official OWASP ZAP Docker image
+        docker pull zaproxy/zap-stable
+
+        docker run --rm -v $(pwd):/zap/wrk --network=host \
+        --entrypoint /bin/bash zaproxy/zap-stable -c "mkdir -p /zap/wrk"  # Create the directory inside the container
+
     # Run ZAP Baseline Scan
     - name: Run ZAP Baseline Scan
       # uses: zaproxy/action-baseline@v0.14.0
       run: |
-        # Pull the official OWASP ZAP Docker image
-        docker pull zaproxy/zap-stable
-  
         # Run ZAP Baseline scan and mount the output directory
         docker run -v $(pwd):/zap/wrk --network=host \
           -t zaproxy/zap-stable zap-baseline.py \
