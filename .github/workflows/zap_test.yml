@@ -19,7 +19,7 @@ jobs:
       # uses: zaproxy/action-baseline@v0.14.0
       run: |
         # Pull the official OWASP ZAP Docker image
-        docker pull docker pull zaproxy/zap-stable
+        docker pull zaproxy/zap-stable
   
         # Run ZAP Baseline scan and mount the output directory
         docker run --rm -v $(pwd):/zap/wrk --network=host \
