@@ -26,7 +26,7 @@ jobs:
           -t zaproxy/zap-stable zap-baseline.py \
           -t http://34.239.245.207:5050 \
           -J report_json.json \
-          -r /zap/wrk/zap-report.html  # Save the report to the mounted directory
+          -r zap-report.html  # Save the report to the mounted directory
      # Upload the generated ZAP report as an artifact
     - name: Upload ZAP report
       uses: actions/upload-artifact@v4
