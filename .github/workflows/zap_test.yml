@@ -14,6 +14,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Ensure write permissions on the directory
+      run: |
+        chmod -R 777 $(pwd)
+
     - name: Create /zap/wrk directory in the container
       run: |
         # Pull the official OWASP ZAP Docker image
