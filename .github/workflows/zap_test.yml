@@ -21,6 +21,7 @@ jobs:
         target: 'http://34.239.245.207:5050'  # Replace with the public IP and port of your EC2 instance
         fail-on-high-risks: 'false'  # Set to 'true' if you want to fail the job on high-risk vulnerabilities
         report-file: 'zap-report.html'
+        allow_issue_writing: 'false'
       env:
         ZAP_HOST: 'localhost'
         ZAP_PORT: '8090'  # Port where ZAP is running (default is 8090)
