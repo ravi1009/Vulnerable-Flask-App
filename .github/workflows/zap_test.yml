@@ -33,4 +33,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: zap-report
-        path: zap-report.html  # Path to the generated report
+        path: report_html.html  # Path to the generated report
