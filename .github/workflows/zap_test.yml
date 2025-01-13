@@ -18,7 +18,7 @@ jobs:
     - name: Run ZAP Baseline Scan
       uses: wangjiaqi1990/zap-baseline-scan@v1
       with:
-        target: 'http://:5050'  # Replace with the public IP and port of your EC2 instance
+        target: 'http://34.239.245.207:5050'  # Replace with the public IP and port of your EC2 instance
         fail-on-high-risks: 'false'  # Set to 'true' if you want to fail the job on high-risk vulnerabilities
         report-file: 'zap-report.html'
       env:
